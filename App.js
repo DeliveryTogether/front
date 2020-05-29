@@ -3,10 +3,11 @@ import { TouchableOpacity, Button, StyleSheet, Text, View, ScrollView, TextInput
 import Participation from './Participation';
 import Payment from './Payment';
 import Posting from './Posting';
+import EndRecruit from './EndRecruit';
 
 export default class extends React.Component {
 
     render(){
-        return <Posting />;
+        return <EndRecruit />;
     }
 }
