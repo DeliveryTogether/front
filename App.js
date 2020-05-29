@@ -4,10 +4,11 @@ import Participation from './Participation';
 import Payment from './Payment';
 import Posting from './Posting';
 import EndRecruit from './EndRecruit';
+import ArrivalNotification from './ArrivalNotification';
 
 export default class extends React.Component {
 
     render(){
-        return <EndRecruit />;
+        return <ArrivalNotification />;
     }
 }
