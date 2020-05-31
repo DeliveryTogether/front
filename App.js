@@ -4,6 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { render } from 'react-dom';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 import {Provider} from 'react-redux';
 import rootReducer from './src/reducers';
@@ -18,6 +19,8 @@ import DetailPost from './pages/DetailPost';
 import MyPageTab from './pages/MyPageTab';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ChangeNickname from './pages/ChangeNickname';
+import AuthLoading from './pages/AuthLoading';
 
 
 //Redux store 선언
@@ -193,13 +196,13 @@ const MainTab = createBottomTabNavigator();
           tabBarIcon: ({focused,color,size})=>{
             let iconName;
 
-            if(route.name === 'Mapping'){
+            if(route.name === 'MappingTab'){
               iconName = 'search'; 
-            } else if(route.name ==='Posting'){
+            } else if(route.name ==='PostingTab'){
               iconName = 'pencil';
-            } else if(route.name ==='List'){
+            } else if(route.name ==='ListTab'){
               iconName = 'th-list';
-            } else if(route.name ==='Settings'){
+            } else if(route.name ==='MyPageTab'){
               iconName = 'user';
             } 
 
@@ -217,10 +220,10 @@ const MainTab = createBottomTabNavigator();
           showLabel : false,
         }}
         >
-        <Tab.Screen name="Mapping" component={MappingScreen} />
-        <Tab.Screen name="Posting" component={PostingScreen} />
-        <Tab.Screen name="List" component={ListScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="MappingTab" component={MappingTab} />
+        <Tab.Screen name="PostingTab" component={PostingTab} />
+        <Tab.Screen name="ListTab" component={ListTab} />
+        <Tab.Screen name="MyPageTab" component={MyPageTab} />
       </Tab.Navigator>
     </NavigationContainer>
 
@@ -252,7 +255,7 @@ const MainTabs = createBottomTabNavigator(
 const RootNavigator = createSwitchNavigator(
   {
     //AuthLoadingScreen에서 토큰 있는지 확인 후 없다면 Auth 있다면 Main 
-    AuthLoading: AuthLoadingScreen,
+    AuthLoading: AuthLoading,
     Auth : AuthStack,
     Main : MainTab,
   },
