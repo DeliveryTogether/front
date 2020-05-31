@@ -23,7 +23,11 @@ export default function ArrivalNotification(){
             </TouchableOpacity>
         </View>
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> MJ
         <View style={styles.content}>
             <View style={styles.member}>
                 <Text> </Text>
